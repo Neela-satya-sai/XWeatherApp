@@ -113,7 +113,7 @@ function WeatherApp() {
         console.log(res);
         let weatherData = {
           temperature: res.current.temp_c,
-          humidity: res.current.wind_kph,
+          humidity: res.current.humidity,
           condition: res.current.condition.text,
           "wind speed": res.current.wind_kph,
         };
@@ -136,7 +136,7 @@ function WeatherApp() {
         makeApiCall={makeApiCall}
       ></SearchBar>
       {fetching ? (
-        <p>Loading data…</p>
+        <p>Loading data...</p> 
       ) : (
         <WeatherCards weatherData={weatherData}></WeatherCards>
       )}
